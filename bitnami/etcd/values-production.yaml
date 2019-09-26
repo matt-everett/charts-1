@@ -297,3 +297,11 @@ disasterRecovery:
     ## storageClassName, choose a storageClassName with ReadWriteMany support
     ##
     storageClassName: nfs
+
+## Enable and disable helm chart features
+features:
+  ## Enable/disable support for scaling the cluster. When scaling is enabled, etcd remove themselves
+  ## from the cluster as the pod is deleted; this allows the stateful set to be scaled down.
+  ## Disabling the scaling feature reduces the complexity of clustering and increases resilience
+  ## in the case where pods are manually deleted.
+  scaling: true
